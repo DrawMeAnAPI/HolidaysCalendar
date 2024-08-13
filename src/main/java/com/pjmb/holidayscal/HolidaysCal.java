@@ -26,12 +26,11 @@ public class HolidaysCal {
     private static void exportAsICS(VCalendar ical) {
         try {
             File file = new File(icsCalendar);
-            FileUtils.writeStringToFile(file, ical.toIcsFormat(), "UTF-8");
+            FileUtils.writeStringToFile(file, ical.toString(), "UTF-8");
         } catch (IOException e) {
             System.out.println("Error writing to file.");
             System.out.println(e.getMessage());
         }
-
     }
 
     public static List<VEvent> readFromCsv(String filename) {

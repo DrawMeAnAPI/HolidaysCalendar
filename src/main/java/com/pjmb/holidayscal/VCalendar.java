@@ -13,16 +13,16 @@ public class VCalendar {
         this.events = events;
     }
 
-    public String toIcsFormat() {
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("BEGIN:VCALENDAR\n")
                 .append("VERSION:").append(VERSION).append("\n")
                 .append("PRODID:").append(PRODID).append("\n")
                 .append("CALSCALE:").append(CALSCALE).append("\n");
         for (VEvent event : events) {
-            sb.append(event.toIcsFormat()).append("\n");
+            sb.append(event.toString()).append("\n");
         }
-        sb.append("END:VCALENDAR\n");
+        sb.append("END:VCALENDAR");
         return sb.toString();
     }
 }
